@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html {
+  /* Paletas de colores */
+  /* Blanco: */
+  --blanco: #ffffff;
+  --blanco2: #f8f8f8;
+  --blanco3: #f2f2f2;
+  --blanco4: #ececec;
+
+  /* Gris: */
+  --gris: #aaaaaa;
+  --gris2: #999999;
+  --gris3: #666666;
+  --gris4: #333333;
+
+  /* Negro: */
+  --negro: #000000;
+  --negro2: #111111;
+  --negro3: #222222;
+  --negro4: #333333;
+}

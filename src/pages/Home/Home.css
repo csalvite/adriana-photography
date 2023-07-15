@@ -1,0 +1,7 @@
+div.App {
+  min-height: 100vh;
+  background-color: var(--blanco3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
