@@ -73,6 +73,8 @@
 @media (max-width: 600px) {
   .job-container {
     margin: 2rem 0;
+    width: 380px;
+    height: 200px;
   }
 
   .job-container-big {

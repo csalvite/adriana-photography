@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home/Home';
 import Info from './Info/Info';
+import PrincipalJob from './PrincipalJob/PrincipalJob';
 
 function MyRoutes() {
   return (
@@ -9,7 +10,7 @@ function MyRoutes() {
         <Route path='/' element={<Home />} />
         {/* <Route path='/narrative' element={<Home />} /> */}
         <Route path='/info' element={<Info />} />
-        <Route path='/element/:idElement' element={<Home />} />
+        <Route path='/element/:idElement' element={<PrincipalJob />} />
       </Routes>
     </BrowserRouter>
   );

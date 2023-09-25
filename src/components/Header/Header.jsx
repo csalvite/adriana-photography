@@ -15,9 +15,11 @@ export const Header = () => {
 
   return (
     <header>
-      <h1>
-        Adriana Lago <span>Photographer</span>
-      </h1>
+      <Link to='/'>
+        <h1>
+          Adriana Lago <span>Photographer</span>
+        </h1>
+      </Link>
       {/* <button id='menu-toggle'>&#9776;</button> */}
       <ul id='menu'>
         <li>
