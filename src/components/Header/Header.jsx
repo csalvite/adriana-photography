@@ -23,6 +23,9 @@ export const Header = () => {
       {/* <button id='menu-toggle'>&#9776;</button> */}
       <ul id='menu'>
         <li>
+          <Link to='/'>Inicio</Link>
+        </li>
+        <li>
           <Link to='/info'>Fotografía</Link>
         </li>
         <li>
@@ -37,6 +40,9 @@ export const Header = () => {
       </ul>
 
       <ul id='dropdown-menu' className={open}>
+        <li>
+          <Link to='/'>Inicio</Link>
+        </li>
         <li>
           <Link to='/info'>Fotografía</Link>
         </li>
