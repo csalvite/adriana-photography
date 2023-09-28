@@ -35,7 +35,7 @@ export const Header = () => {
           <Link to='/info'>Sobre Mí</Link>
         </li>
         <li>
-          <Link to='/info'>Stills</Link>
+          <Link to='/pruebas'>Stills</Link>
         </li>
       </ul>
 
@@ -53,7 +53,7 @@ export const Header = () => {
           <Link to='/info'>Sobre Mí</Link>
         </li>
         <li>
-          <Link to='/info'>Stills</Link>
+          <Link to='/pruebas'>Stills</Link>
         </li>
       </ul>
       {open === 'close' ? (
