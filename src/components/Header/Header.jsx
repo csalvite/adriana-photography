@@ -29,7 +29,7 @@ export const Header = () => {
           <Link to='/photos'>Fotografía</Link>
         </li>
         <li>
-          <Link to='/info'>Videos</Link>
+          <Link to='/videos'>Videos</Link>
         </li>
         <li>
           <Link to='/info'>Sobre Mí</Link>
@@ -47,7 +47,7 @@ export const Header = () => {
           <Link to='/photos'>Fotografía</Link>
         </li>
         <li>
-          <Link to='/info'>Videos</Link>
+          <Link to='/videos'>Videos</Link>
         </li>
         <li>
           <Link to='/info'>Sobre Mí</Link>

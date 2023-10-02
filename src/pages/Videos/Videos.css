@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 80vw;
+  margin: 2rem;
+}
+
+.container-video {
+  padding: 2rem 0;
+}
+
+.container-video > h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  align-self: self-start;
+}
+
+.video {
+  width: 640px;
+  height: 360px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95vw;
+    margin: 2rem 0;
+  }
+
+  .container-video {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video {
+    width: 95vw;
+    height: 300px;
+  }
+}

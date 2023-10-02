@@ -30,6 +30,7 @@
 
 .group-images img {
   width: 30%;
+  object-fit: cover;
 }
 
 .image-hover {
