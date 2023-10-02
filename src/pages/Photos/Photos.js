@@ -5,25 +5,8 @@ import { Header } from '../../components/Header/Header';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import ImageCarousel from '../../components/PhotoCarrousel/ImageCarrousel';
 import Jobs from '../../components/Jobs/Jobs';
-import 'animate.css/animate.min.css';
-// import {
-//   Animator,
-//   ScrollContainer,
-//   ScrollPage,
-//   batch,
-//   Fade,
-//   FadeIn,
-//   FadeOut,
-//   Move,
-//   MoveIn,
-//   MoveOut,
-//   Sticky,
-//   StickyIn,
-//   StickyOut,
-//   Zoom,
-//   ZoomIn,
-//   ZoomOut,
-// } from 'react-scroll-motion';
+import WSPGallery from '../../components/PhotoCarrousel/WSPGallery';
+import './Photos.css';
 
 const Photos = () => {
   //   const { type } = useParams();
@@ -49,15 +32,23 @@ const Photos = () => {
     setImages(newImages);
   }, []);
 
-  // const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
-  // const FadeUp = batch(Fade(), Move(), Sticky());
-
   return (
-    <div className='App'>
+    <div className='App container-photos'>
       <Header />
-      {/* <PhotoCarousel photos={photoFiles} /> */}
+      <div className='hr'>
+        <hr />
+      </div>
+      {/* <h2>Trabajo de moda</h2> */}
+      <h3>Trabajo de moda</h3>
+      <p>Con fecha de 02/10/2022</p>
       <ImageCarousel images={images} />
+      <br />
+      <br />
+      <h2>Gustache mais o de arriba ou o de abaixo?¿</h2>
+      <br />
+      <br />
 
+      <WSPGallery images={images} />
       <Footer />
     </div>
   );

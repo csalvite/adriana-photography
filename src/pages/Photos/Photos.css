@@ -1,0 +1,23 @@
+.hr {
+  width: 100%;
+  padding: 2rem;
+}
+
+.container-photos > h3,
+.container-photos > h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.container-photos > h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.container-photos > h3,
+.container-photos > p {
+  padding: 0.5rem 2rem;
+}

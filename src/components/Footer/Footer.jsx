@@ -3,7 +3,9 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer>
-      <hr />
+      <div className='hr'>
+        <hr />
+      </div>
       <h2>Adriana Lago Senande</h2>
       <h3>
         Fotógrafa, editora de vídeo y realizadora de televisión, cine y
