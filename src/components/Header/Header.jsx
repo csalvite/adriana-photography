@@ -17,7 +17,7 @@ export const Header = () => {
     <header>
       <Link to='/'>
         <h1>
-          Adriana Lago <span>Photographer</span>
+          Vy Adri <span>Photographer</span>
         </h1>
       </Link>
       {/* <button id='menu-toggle'>&#9776;</button> */}

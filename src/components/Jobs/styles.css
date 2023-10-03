@@ -41,7 +41,6 @@
 }
 
 .image-hover > h3 {
-  border: 1px solid white;
   padding: 0.5rem 1.5rem;
   letter-spacing: 3px;
   font-weight: 200;
@@ -63,12 +62,7 @@
 
 .job-container:hover .image-group-hover {
   background-color: white;
-  border: 1px solid black;
   color: black;
-}
-
-.image-group-hover > h3 {
-  border: 1px solid black;
 }
 
 @media (max-width: 600px) {
