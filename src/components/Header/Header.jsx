@@ -17,7 +17,8 @@ export const Header = () => {
     <header>
       <Link to='/'>
         <h1>
-          Vy Adri <span>Photographer</span>
+          RINA YANG <span>CINEMATOGRAPHER</span>
+          {/* VY ADRI <span>CINEMATOGRAPHER</span> */}
         </h1>
       </Link>
       {/* <button id='menu-toggle'>&#9776;</button> */}
