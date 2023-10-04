@@ -12,7 +12,22 @@ const Videos = () => {
         <Jobs
           idVideo={1}
           image={'/resources/photos-content/image1.jpg'}
-          title={'Video Musical'}
+          title={'All too well'}
+        />
+        <Jobs
+          idVideo={1}
+          image={'/resources/photos-content/image1.jpg'}
+          title={'All too well'}
+        />
+        <Jobs
+          idVideo={1}
+          image={'/resources/photos-content/image1.jpg'}
+          title={'All too well'}
+        />
+        <Jobs
+          idVideo={1}
+          image={'/resources/photos-content/image1.jpg'}
+          title={'All too well'}
         />
       </div>
       <Footer />

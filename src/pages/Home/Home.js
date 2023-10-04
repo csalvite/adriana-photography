@@ -9,9 +9,21 @@ function Home() {
     <div className='App'>
       <Header />
       <Job isHeader={true} />
-      <Jobs />
-      <Jobs />
-      <Jobs />
+      <Jobs
+        idVideo={1}
+        image={'/resources/photos-content/image1.jpg'}
+        title={'All Too Well'}
+      />
+      <Jobs
+        idVideo={1}
+        image={'/resources/photos-content/image2.jpg'}
+        title={'Video Musical'}
+      />
+      <Jobs
+        idVideo={1}
+        image={'/resources/photos-content/image3.jpg'}
+        title={'Video Musical'}
+      />
       <Footer />
     </div>
   );

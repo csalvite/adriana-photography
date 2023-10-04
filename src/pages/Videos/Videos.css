@@ -17,11 +17,12 @@
   font-size: 1.2rem;
   text-transform: uppercase;
   align-self: self-start;
+  padding: 1rem;
 }
 
-.video {
-  width: 640px;
-  height: 360px;
+.container-video > iframe {
+  width: 840px;
+  height: 460px;
 }
 
 @media (max-width: 600px) {
@@ -38,7 +39,7 @@
     align-items: center;
   }
 
-  .video {
+  .container-video > iframe {
     width: 95vw;
     height: 300px;
   }

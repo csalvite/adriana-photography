@@ -1,11 +1,11 @@
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import Jobs from '../../components/Jobs/Jobs';
 import './Videos.css';
 
 const Video = () => {
-  const { idVideo } = useParams();
+  //   const { idVideo } = useParams();
 
   return (
     <div className='App'>
@@ -13,15 +13,14 @@ const Video = () => {
 
       <div className='container-video'>
         <iframe
-          title='video'
-          src='https://player.vimeo.com/video/868399826?h=82bc10be63'
-          className='video'
+          src='https://www.youtube.com/embed/tollGa3S0o8?si=CSmCG-sAM4V7eWoT'
+          title='YouTube video player'
           frameborder='0'
-          allow='autoplay; fullscreen; picture-in-picture'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
           allowfullscreen
         ></iframe>
 
-        <h2>Video de prueba</h2>
+        <h2>Taylor Swift - All Too Well (10 minutes version)</h2>
       </div>
       <Jobs
         idVideo={1}

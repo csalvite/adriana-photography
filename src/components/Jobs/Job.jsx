@@ -6,7 +6,7 @@ const Job = () => {
     <div className='job-container job-container-big'>
       <Link to='/element/2'>
         <div className='image-hover'>
-          <h3>HOLA</h3>
+          <h3>Happier Than Ever</h3>
         </div>
         <div
           className='image-container-background'
