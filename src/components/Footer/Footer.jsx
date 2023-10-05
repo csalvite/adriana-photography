@@ -9,7 +9,7 @@ const Footer = () => {
       <h2>VY ADRI</h2>
       <h3>Photography and Cinematography</h3>
       <p>
-        <i className='fa-solid fa-envelope'></i> vyadrianalago@gmail.com
+        <i className='fa-solid fa-envelope'></i> vy.adrianalago@gmail.com
       </p>
       <p>
         <i className='fa-solid fa-phone'></i> 671 961 191
