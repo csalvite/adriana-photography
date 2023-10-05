@@ -17,13 +17,12 @@ export const Header = () => {
     <header>
       <Link to='/'>
         <h1>
-          RINA YANG <span>CINEMATOGRAPHER</span>
-          {/* VY ADRI <span>CINEMATOGRAPHER</span> */}
+          VY ADRI <span>CINEMATOGRAPHER</span>
         </h1>
       </Link>
       {/* <button id='menu-toggle'>&#9776;</button> */}
       <ul id='menu'>
-        <li>
+        <li className='link'>
           <Link to='/'>Inicio</Link>
         </li>
         <li>
@@ -34,9 +33,6 @@ export const Header = () => {
         </li>
         <li>
           <Link to='/info'>Sobre Mí</Link>
-        </li>
-        <li>
-          <Link to='/pruebas'>Stills</Link>
         </li>
       </ul>
 
@@ -52,9 +48,6 @@ export const Header = () => {
         </li>
         <li>
           <Link to='/info'>Sobre Mí</Link>
-        </li>
-        <li>
-          <Link to='/pruebas'>Stills</Link>
         </li>
       </ul>
       {open === 'close' ? (

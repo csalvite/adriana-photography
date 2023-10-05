@@ -15,16 +15,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: Muli, Helvetica Neue, sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 html {
+  scroll-behavior: smooth;
   /* Paletas de colores */
   /* Blanco: */
   --blanco: #ffffff;

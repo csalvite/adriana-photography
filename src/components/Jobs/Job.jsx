@@ -4,7 +4,7 @@ import './styles.css';
 const Job = () => {
   return (
     <div className='job-container job-container-big'>
-      <Link to='/element/2'>
+      <Link to='/videos'>
         <div className='image-hover'>
           <h3>Happier Than Ever</h3>
         </div>

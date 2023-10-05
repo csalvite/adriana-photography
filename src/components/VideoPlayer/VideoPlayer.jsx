@@ -1,18 +1,17 @@
 import './videoPlayer.css';
 
-const VideoPlayer = ({ src }) => {
+const VideoPlayer = ({ title, src }) => {
   return (
-    <div className='about-me video-container'>
-      <video controls className='video'>
-        <source src={src} type='video/mp4' />
-        {/* Puedes agregar más sources para formatos diferentes aquí */}
-        Tu navegador no admite la reproducción de video.
-      </video>
+    <div className='container-video'>
+      <iframe
+        src={src}
+        title='YouTube video player'
+        frameborder='0'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>
 
-      <div className='video-text'>
-        <h2>Titulo del video</h2>
-        <p>Información acerca del vídeo</p>
-      </div>
+      <h2>{title}</h2>
     </div>
   );
 };
