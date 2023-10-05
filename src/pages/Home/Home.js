@@ -32,7 +32,9 @@ function Home() {
   return (
     <div className='App'>
       <Header />
-      <Job isHeader={true} />
+      <main>
+        <Job isHeader={true} />
+      </main>
 
       <Footer />
     </div>

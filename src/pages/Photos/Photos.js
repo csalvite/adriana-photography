@@ -37,7 +37,9 @@ const Photos = () => {
       <div className='hr'>
         <hr />
       </div>
-      <WSPGallery images={images} />
+      <main>
+        <WSPGallery images={images} />
+      </main>
       <Footer />
     </div>
   );

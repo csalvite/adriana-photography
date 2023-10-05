@@ -52,35 +52,43 @@ const Videos = () => {
   return (
     <div className='App videos-container'>
       <Header />
-      {selectedVideo?.id !== 0 && (
-        <VideoPlayer title={selectedVideo.title} src={selectedVideo?.src} />
-      )}
-      <div className='container'>
-        <Jobs
-          idVideo={1}
-          image={images}
-          title={'Taylor Swift - All Too Well'}
-          subtitle={'Dir. Taylor Swift'}
-          src={'https://www.youtube.com/embed/tollGa3S0o8?si=oXrkfh5JiH6zKmjU'}
-          onClick={handleSelectVideo}
-        />
-        <Jobs
-          idVideo={2}
-          image={images}
-          title={'Taylor Swift - 22'}
-          subtitle={'Dir. Taylor Swift'}
-          src={'https://www.youtube.com/embed/9boiT64sm0Q?si=wy_nTXMiacnuUARg'}
-          onClick={handleSelectVideo}
-        />
-        <Jobs
-          idVideo={3}
-          image={images}
-          title={'Taylor Swift - Anti Hero'}
-          subtitle={'Dir. Taylor Swift | Photography Assistant'}
-          src={'https://www.youtube.com/embed/b1kbLwvqugk?si=u8pBbS-IJILxrXqj'}
-          onClick={handleSelectVideo}
-        />
-      </div>
+      <main>
+        {selectedVideo?.id !== 0 && (
+          <VideoPlayer title={selectedVideo.title} src={selectedVideo?.src} />
+        )}
+        <div className='container'>
+          <Jobs
+            idVideo={1}
+            image={images}
+            title={'Taylor Swift - All Too Well'}
+            subtitle={'Dir. Taylor Swift'}
+            src={
+              'https://www.youtube.com/embed/tollGa3S0o8?si=oXrkfh5JiH6zKmjU'
+            }
+            onClick={handleSelectVideo}
+          />
+          <Jobs
+            idVideo={2}
+            image={images}
+            title={'Taylor Swift - 22'}
+            subtitle={'Dir. Taylor Swift'}
+            src={
+              'https://www.youtube.com/embed/9boiT64sm0Q?si=wy_nTXMiacnuUARg'
+            }
+            onClick={handleSelectVideo}
+          />
+          <Jobs
+            idVideo={3}
+            image={images}
+            title={'Taylor Swift - Anti Hero'}
+            subtitle={'Dir. Taylor Swift | Photography Assistant'}
+            src={
+              'https://www.youtube.com/embed/b1kbLwvqugk?si=u8pBbS-IJILxrXqj'
+            }
+            onClick={handleSelectVideo}
+          />
+        </div>
+      </main>
       <Footer />
     </div>
   );
