@@ -92,9 +92,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   gap: 1rem;
-
   transition: all 0.3s ease;
   cursor: pointer;
   border-radius: 5px;
