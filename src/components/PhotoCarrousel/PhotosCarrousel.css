@@ -99,6 +99,11 @@
     padding: 0 0.5rem;
   }
 
+  .galleryWrap .single {
+    height: 200px;
+    width: 100px;
+  }
+
   .container-photos > h3,
   .container-photos > p {
     padding: 1rem;
