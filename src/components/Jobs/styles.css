@@ -139,4 +139,8 @@
     height: 300px;
     width: 380px;
   }
+
+  .container-options > .option {
+    width: 100%;
+  }
 }
