@@ -6,7 +6,3 @@ div.App {
   align-items: center;
   transition: all 0.3s;
 }
-
-div.App > main {
-  flex-grow: 1;
-}

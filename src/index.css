@@ -22,8 +22,9 @@ body {
   flex-direction: column;
 }
 
-body > main {
+div.App > main {
   flex-grow: 1;
+  padding: 10px;
 }
 
 html {

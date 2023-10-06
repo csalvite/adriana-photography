@@ -96,6 +96,7 @@
   transition: all 0.3s ease;
   cursor: pointer;
   border-radius: 5px;
+  text-align: center;
 }
 
 .container-options > .option > img {
@@ -140,5 +141,10 @@
 
   .container-options > .option {
     width: 100%;
+    overflow: hidden;
+  }
+
+  .container-options > .option > h2 {
+    font-size: 1.2rem;
   }
 }

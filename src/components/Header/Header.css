@@ -58,6 +58,7 @@ header ul#dropdown-menu.close {
   /* Estilos para pantallas de tamaño de teléfono */
 
   header h1 {
+    padding: 0;
     padding-top: 3.5rem;
   }
 
