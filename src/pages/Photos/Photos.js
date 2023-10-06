@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import Footer from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
-import 'react-image-gallery/styles/css/image-gallery.css';
 import WSPGallery from '../../components/PhotoCarrousel/WSPGallery';
 import './Photos.css';
 
