@@ -12,9 +12,7 @@ const Jobs = ({ idVideo, image, title, subtitle, src, onClick }) => {
         <h4>{subtitle}</h4>
       </div>
       <div className='image-container-background group-images'>
-        <img src={image[0]?.original} alt='imagen random' />
-        <img src={image[1]?.original} alt='imagen random' />
-        <img src={image[2]?.original} alt='imagen random' />
+        <img src={image} alt='imagen random' />
       </div>
     </div>
   );

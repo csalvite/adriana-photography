@@ -29,12 +29,7 @@ const Videos = () => {
       require.context('../../assets', true, /\.(jpg|jpeg|png|gif|bmp)$/)
     );
 
-    photoFiles.map((photo) =>
-      newImages.push({
-        original: photo,
-        thumbnail: photo,
-      })
-    );
+    photoFiles.map((photo) => newImages.push(photo));
 
     setImages(newImages);
   }, []);
@@ -59,7 +54,7 @@ const Videos = () => {
         <div className='container'>
           <Jobs
             idVideo={1}
-            image={images}
+            image={images[0]}
             title={'Taylor Swift - All Too Well'}
             subtitle={'Dir. Taylor Swift'}
             src={
@@ -69,7 +64,7 @@ const Videos = () => {
           />
           <Jobs
             idVideo={2}
-            image={images}
+            image={images[1]}
             title={'Taylor Swift - 22'}
             subtitle={'Dir. Taylor Swift'}
             src={
@@ -79,7 +74,7 @@ const Videos = () => {
           />
           <Jobs
             idVideo={3}
-            image={images}
+            image={images[2]}
             title={'Taylor Swift - Anti Hero'}
             subtitle={'Dir. Taylor Swift | Photography Assistant'}
             src={

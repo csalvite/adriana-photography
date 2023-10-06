@@ -21,3 +21,12 @@
 .container-photos > p {
   padding: 0.5rem 2rem;
 }
+
+/* Componente de muestra de fotos */
+
+.container-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}

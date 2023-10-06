@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './PhotosCarrousel.css';
 
-const WSPGallery = ({ images }) => {
+const WSPGallery = ({ images, sectionTitle }) => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [openModal, setOpenModal] = useState(false);
 
@@ -27,7 +27,7 @@ const WSPGallery = ({ images }) => {
   };
 
   return (
-    <div>
+    <div className='wspGallery'>
       {openModal && (
         <div className='sliderWrap'>
           <i
@@ -40,7 +40,7 @@ const WSPGallery = ({ images }) => {
             onClick={nextSlide}
           ></i>
           <div className='fullScreenImage'>
-            <img src={images[slideNumber].original} alt='' />
+            <img src={images[slideNumber]} alt='' />
           </div>
         </div>
       )}
@@ -54,11 +54,14 @@ const WSPGallery = ({ images }) => {
                 key={index}
                 onClick={() => handleOpenModal(index)}
               >
-                <img src={image.original} alt={`imagen-${index}`} />
+                <img src={image} alt={`imagen-${index}`} />
               </div>
             );
           })}
       </div>
+      <h2>{sectionTitle?.title}</h2>
+      <h3>{sectionTitle?.subtitle}</h3>
+      <p>{sectionTitle?.p}</p>
     </div>
   );
 };
