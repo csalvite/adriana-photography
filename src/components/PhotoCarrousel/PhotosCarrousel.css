@@ -88,6 +88,7 @@ div.wspGallery > h2 {
 .sliderWrap .btnClose {
   top: 40px;
   right: 40px;
+  font-size: 1.2rem;
 }
 
 .sliderWrap .btnPrev {
