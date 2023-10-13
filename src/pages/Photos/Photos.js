@@ -5,18 +5,20 @@ import { Header } from '../../components/Header/Header';
 import WSPGallery from '../../components/PhotoCarrousel/WSPGallery';
 import './Photos.css';
 import JobPhotos from '../../components/Jobs/JobPhotos';
+import usePhotos from '../../hooks/usePhotos';
 
 const { REACT_APP_BACK } = process.env;
 
 const Photos = () => {
+  const { images, error, loading } = usePhotos();
   //   const { type } = useParams();
-  const [images, setImages] = useState([]);
+  // const [images, setImages] = useState([]);
   const [imagesOnScreen, setImagesOnScreen] = useState({
     idImages: 0,
     images: [],
   });
-  const [error, setError] = useState();
-  const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState();
+  // const [loading, setLoading] = useState(true);
 
   const handleSetImagesOnScreen = (imagesId, images, title) => {
     setImagesOnScreen({
@@ -27,44 +29,6 @@ const Photos = () => {
 
     window.scrollTo(0, 0);
   };
-
-  useEffect(() => {
-    const getPhotos = async () => {
-      try {
-        setLoading(true);
-
-        const response = await fetch(`${REACT_APP_BACK}/photos`, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-          const dataArray = Object.keys(data.data).map((title) => {
-            return {
-              title,
-              images: data.data[title],
-            };
-          });
-
-          setImages(dataArray);
-          setLoading(false);
-        } else {
-          setError(data.message);
-        }
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getPhotos();
-  }, []);
-
-  console.log('DATA', images);
 
   return (
     <div className='App container-photos'>
