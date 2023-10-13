@@ -1,13 +1,11 @@
 // import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import Footer from '../../components/Footer/Footer';
+import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import WSPGallery from '../../components/PhotoCarrousel/WSPGallery';
 import './Photos.css';
 import JobPhotos from '../../components/Jobs/JobPhotos';
 import usePhotos from '../../hooks/usePhotos';
-
-const { REACT_APP_BACK } = process.env;
+import Reveal from '../../components/Reveal';
 
 const Photos = () => {
   const { images, error, loading } = usePhotos();
@@ -53,48 +51,31 @@ const Photos = () => {
             <p>{error}</p>
           ) : (
             <div className='container-options'>
-              {images?.length > 0 &&
+              {images?.length > 0 ? (
                 images?.map((image, index) => {
                   return (
-                    <JobPhotos
-                      key={index}
-                      idImage={index}
-                      title={{
-                        title: image.title,
-                        subtitle: 'Dir Taylor Swift',
-                        p: 'Sony Venice, Panavision SPHERO',
-                      }}
-                      image={image.images}
-                      onClick={handleSetImagesOnScreen}
-                    />
+                    <Reveal className={'container-options'}>
+                      <JobPhotos
+                        key={index}
+                        idImage={index}
+                        title={{
+                          title: image.title,
+                          subtitle: 'Dir Taylor Swift',
+                          p: 'Sony Venice, Panavision SPHERO',
+                        }}
+                        image={image.images}
+                        onClick={handleSetImagesOnScreen}
+                      />
+                    </Reveal>
                   );
-                })}
-              {/*               
-              <JobPhotos
-                idImage={2}
-                title={{
-                  title: 'DJ Shadow ft. De La Soul "Rocket Fuel"',
-                  subtitle: 'Dir. Sam Pilling',
-                  p: '35mm, Super 16mm',
-                }}
-                image={images[1]}
-                onClick={handleSetImagesOnScreen}
-              />
-              <JobPhotos
-                idImage={3}
-                title={{
-                  title: 'Sam Fender "DEAD BOYS"',
-                  subtitle: 'Dir. Vincent Haycock',
-                  p: 'Super 16mm',
-                }}
-                image={images[2]}
-                onClick={handleSetImagesOnScreen}
-              /> */}
+                })
+              ) : (
+                <div>No hay imágenes todavía...</div>
+              )}
             </div>
           )}
         </main>
       )}
-      <Footer />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './PhotosCarrousel.css';
+import Reveal from '../Reveal';
 
 const { REACT_APP_BACK } = process.env;
 
@@ -90,16 +91,18 @@ const WSPGallery = ({ images, sectionTitle }) => {
         {images &&
           images.map((image, index) => {
             return (
-              <div
-                className='single'
-                key={index}
-                onClick={() => handleOpenModal(index)}
-              >
-                <img
-                  src={`${REACT_APP_BACK}/${sectionTitle.title}/${image.name}`}
-                  alt={`imagen-${index}`}
-                />
-              </div>
+              <Reveal>
+                <div
+                  className='single'
+                  key={index}
+                  onClick={() => handleOpenModal(index)}
+                >
+                  <img
+                    src={`${REACT_APP_BACK}/${sectionTitle.title}/${image.name}`}
+                    alt={`imagen-${index}`}
+                  />
+                </div>
+              </Reveal>
             );
           })}
       </div>
