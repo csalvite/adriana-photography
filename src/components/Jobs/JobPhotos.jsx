@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './styles.css';
+import Reveal from '../Reveal';
 
 const { REACT_APP_BACK } = process.env;
 
@@ -21,11 +22,13 @@ const JobPhotos = ({ idImagen, title, image, onClick }) => {
       {photosCover &&
         photosCover?.map((img, index) => {
           return (
-            <img
-              key={index}
-              src={`${REACT_APP_BACK}/${title.title}/${img.name}`}
-              alt={`title${idImagen}`}
-            />
+            <Reveal delay={0.25 + index / 10}>
+              <img
+                key={index}
+                src={`${REACT_APP_BACK}/${title.title}/${img.name}`}
+                alt={`title${idImagen}`}
+              />
+            </Reveal>
           );
         })}
       <h2>{title?.title}</h2>

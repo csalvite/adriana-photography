@@ -6,19 +6,22 @@ import './Videos.css';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import ReactPlayer from 'react-player';
 import Reveal from '../../components/Reveal';
-import JobPhotos from '../../components/Jobs/JobPhotos';
+import JobVideos from '../../components/Jobs/JobVideos';
 import { PhotosContext } from '../../context/PhotosContext';
+import useVideos from '../../hooks/useVideos';
 
 const Videos = () => {
   // Pagina para mostar una lista de todos los videos
-  const { images, error, loading } = useContext(PhotosContext);
+  // const { images, error } = useContext(PhotosContext);
+  const { videos, error, loading } = useVideos();
   const [selectedVideo, setSelectedVideo] = useState({
     src: 'https://www.youtube.com/embed/5GJWxDKyk3A?si=gQmoi1M1ICACYxGz',
-    id: 4,
+    id: 999999,
     title: 'Happier Than Ever',
   });
 
   const handleSelectVideo = (idVideo, srcVideo, title) => {
+    console.log('onclick', idVideo, srcVideo, title);
     setSelectedVideo({
       id: idVideo,
       src: srcVideo,
@@ -49,7 +52,27 @@ const Videos = () => {
             <p>{error}</p>
           ) : (
             <div className='container-options'>
-              {images?.length > 0 ? (
+              {videos?.length > 0 ? (
+                <div>
+                  {videos.map((video) => {
+                    return (
+                      <Reveal className={'container-options'}>
+                        <JobVideos
+                          key={video.id}
+                          idVideo={video.id}
+                          urlVideo={video.urlVideo}
+                          title={video.title}
+                          images={video.photos}
+                          onClick={handleSelectVideo}
+                        />
+                      </Reveal>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div> No hay videos todavía...</div>
+              )}
+              {/* {images?.length > 0 ? (
                 images?.map((image, index) => {
                   return (
                     <Reveal className={'container-options'}>
@@ -69,7 +92,7 @@ const Videos = () => {
                 })
               ) : (
                 <div>No hay imágenes todavía...</div>
-              )}
+              )} */}
             </div>
           )}
         </div>

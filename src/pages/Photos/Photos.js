@@ -1,10 +1,9 @@
 // import { useParams } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import WSPGallery from '../../components/PhotoCarrousel/WSPGallery';
 import './Photos.css';
 import JobPhotos from '../../components/Jobs/JobPhotos';
-import usePhotos from '../../hooks/usePhotos';
 import Reveal from '../../components/Reveal';
 import { PhotosContext } from '../../context/PhotosContext';
 
@@ -12,6 +11,7 @@ const Photos = () => {
   //   const { type } = useParams();
   // const [images, setImages] = useState([]);
   const { images, error, loading } = useContext(PhotosContext);
+  // const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const [imagesOnScreen, setImagesOnScreen] = useState({
     idImages: 0,
@@ -29,6 +29,26 @@ const Photos = () => {
 
     window.scrollTo(0, 0);
   };
+
+  // // Hasta que se obtengan al completo las imágenes que se mostrarán se muestra el componente Loading
+  // useEffect(() => {
+  //   const imagePromises = images.map((src) => {
+  //     return new Promise((resolve, reject) => {
+  //       const img = new Image();
+  //       img.src = src;
+  //       img.onload = resolve;
+  //       img.onerror = reject;
+  //     });
+  //   });
+
+  //   Promise.all(imagePromises)
+  //     .then(() => {
+  //       setImagesLoaded(true);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error al cargar imágenes:', error);
+  //     });
+  // }, [images]);
 
   return (
     <div className='App container-photos'>

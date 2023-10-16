@@ -99,14 +99,14 @@
   text-align: center;
 }
 
-.container-options .option > img {
+.container-options .option img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: all 0.3s ease;
 }
 
-.container-options .option > h2 {
+.container-options .option h2 {
   display: none;
   font-weight: 100;
   font-size: 1.8rem;
@@ -119,11 +119,11 @@
   border: 1px solid black;
 }
 
-.container-options .option:hover > img {
+.container-options .option:hover img {
   display: none;
 }
 
-.container-options .option:hover > h2 {
+.container-options .option:hover h2 {
   display: block;
 }
 
@@ -144,7 +144,7 @@
     overflow: hidden;
   }
 
-  .container-options .option > h2 {
+  .container-options .option h2 {
     font-size: 1.2rem;
   }
 }
