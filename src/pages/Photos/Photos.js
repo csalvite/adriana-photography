@@ -1,16 +1,18 @@
 // import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import WSPGallery from '../../components/PhotoCarrousel/WSPGallery';
 import './Photos.css';
 import JobPhotos from '../../components/Jobs/JobPhotos';
 import usePhotos from '../../hooks/usePhotos';
 import Reveal from '../../components/Reveal';
+import { PhotosContext } from '../../context/PhotosContext';
 
 const Photos = () => {
-  const { images, error, loading } = usePhotos();
   //   const { type } = useParams();
   // const [images, setImages] = useState([]);
+  const { images, error, loading } = useContext(PhotosContext);
+
   const [imagesOnScreen, setImagesOnScreen] = useState({
     idImages: 0,
     images: [],

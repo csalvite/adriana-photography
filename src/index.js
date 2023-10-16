@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MyRoutes from './pages/Routes';
+import { PhotosProvider } from './context/PhotosContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MyRoutes />
+    <PhotosProvider>
+      <MyRoutes />
+    </PhotosProvider>
   </React.StrictMode>
 );
 
