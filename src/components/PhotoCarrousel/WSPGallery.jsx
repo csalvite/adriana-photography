@@ -91,7 +91,7 @@ const WSPGallery = ({ images, sectionTitle }) => {
         {images &&
           images.map((image, index) => {
             return (
-              <Reveal>
+              <Reveal delay={0.25 + index / 10}>
                 <div
                   className='single'
                   key={index}
