@@ -1,3 +1,4 @@
+import AboutMeCard from '../../components/AboutMe/AboutMeCard';
 import Footer from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import './Info.css';
@@ -8,7 +9,8 @@ function Info() {
       <Header />
       <main>
         <div className='about-me'>
-          <img src='/resources/profile.jpg' alt='profileimage' />
+          {/* <img src='/resources/profile.jpg' alt='profileimage' /> */}
+          <AboutMeCard />
           <div className='text-container'>
             <p>
               Soy una apasionada de la narrativa visual, una contadora de

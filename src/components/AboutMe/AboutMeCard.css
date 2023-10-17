@@ -1,0 +1,117 @@
+li#tw {
+  --i: 1;
+}
+
+li#ig {
+  --i: 2;
+}
+
+li#ln {
+  --i: 3;
+}
+
+.aboutmecard-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.aboutmecard-container .aboutmeCard {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  margin: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutmecard-container .aboutmeCard .aboutContent {
+  position: absolute;
+  bottom: -200px;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  z-index: 10;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: bottom 0.5s;
+}
+
+.aboutmecard-container .aboutmeCard:hover .aboutContent {
+  bottom: 0px;
+}
+
+.aboutmecard-container .aboutmeCard .aboutContent .contentBox h3 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 15px;
+  line-height: 1.1em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition-delay: 0.6s;
+}
+
+.aboutmecard-container .aboutmeCard:hover .aboutContent .contentBox h3 {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.aboutmecard-container .aboutmeCard .aboutContent .contentBox h3 span {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+.aboutmecard-container .aboutmeCard .aboutContent .sci {
+  position: relative;
+  bottom: 10px;
+  display: flex;
+}
+
+.aboutmecard-container .aboutmeCard .aboutContent .sci li {
+  list-style: none;
+  margin: 0 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+  transition-delay: calc(0.2s * var(--i));
+}
+
+.aboutmecard-container .aboutmeCard:hover .aboutContent .sci li {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.aboutmecard-container .aboutmeCard .aboutContent .sci li a {
+  color: white;
+  font-size: 24px;
+}
+
+@media (max-width: 600px) {
+  .aboutmecard-container .aboutmeCard {
+    width: 280px;
+    height: 400px;
+    margin: 0px;
+  }
+
+  .aboutmecard-container .aboutmeCard .aboutContent .sci {
+    bottom: 0px;
+  }
+}
