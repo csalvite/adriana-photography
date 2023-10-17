@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import MenuResponsive from './MenuResponsive';
 
 export const Header = () => {
   // document.getElementById('menu-toggle').addEventListener('click', function () {
@@ -20,6 +21,22 @@ export const Header = () => {
           VY ADRI <span>CINEMATOGRAPHER</span>
         </h1>
       </Link>
+      <div className='icon-container'>
+        {open === 'close' ? (
+          <i
+            id='menu-toggle'
+            className='fa-solid fa-bars menu-icon'
+            onClick={() => toggleOpen()}
+          ></i>
+        ) : (
+          <i
+            id='menu-toggle'
+            className='menu-icon fa-solid fa-x'
+            onClick={() => toggleOpen()}
+          ></i>
+        )}
+        <MenuResponsive className={open} />
+      </div>
       {/* <button id='menu-toggle'>&#9776;</button> */}
       <ul id='menu'>
         <li className='link'>
@@ -35,34 +52,6 @@ export const Header = () => {
           <Link to='/info'>Sobre Mí</Link>
         </li>
       </ul>
-
-      <ul id='dropdown-menu' className={open}>
-        <li>
-          <Link to='/'>Inicio</Link>
-        </li>
-        <li>
-          <Link to='/photos'>Fotografía</Link>
-        </li>
-        <li>
-          <Link to='/videos'>Videos</Link>
-        </li>
-        <li>
-          <Link to='/info'>Sobre Mí</Link>
-        </li>
-      </ul>
-      {open === 'close' ? (
-        <i
-          id='menu-toggle'
-          className='fa-solid fa-bars menu-icon'
-          onClick={() => toggleOpen()}
-        ></i>
-      ) : (
-        <i
-          id='menu-toggle'
-          className='menu-icon fa-solid fa-x'
-          onClick={() => toggleOpen()}
-        ></i>
-      )}
     </header>
   );
 };

@@ -1,5 +1,6 @@
 header {
   color: var(--negro2);
+  width: 100%;
 }
 
 header a {
@@ -20,8 +21,7 @@ header h1 span {
   font-weight: 700;
 }
 
-header ul#menu,
-header ul#dropdown-menu {
+header ul#menu {
   display: flex;
   list-style: none;
   min-width: 100%;
@@ -55,9 +55,17 @@ header ul#dropdown-menu.close {
   display: none;
 }
 
+header ul#dropdown-menu {
+  display: flex;
+  width: 100%;
+  margin-top: 2.5rem;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+
 @media screen and (max-width: 600px) {
   /* Estilos para pantallas de tamaño de teléfono */
-
   header h1 {
     padding: 0;
     padding-top: 3.5rem;
@@ -65,26 +73,25 @@ header ul#dropdown-menu.close {
 
   #menu-toggle {
     display: block;
+    font-size: 1.6rem;
+  }
+
+  .icon-container {
+    position: relative;
+    padding: 2rem;
   }
 
   .menu-icon {
-    position: fixed;
-    top: 0;
+    position: absolute;
     right: 0;
-    margin: 2rem;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 3;
+    margin-right: 1.2rem;
   }
 
   header ul#menu {
     display: none; /* Oculta la lista en pantallas más pequeñas */
   }
 
-  header ul#dropdown-menu {
-    position: absolute;
-    top: 0;
-    left: 0;
+  /* header ul#dropdown-menu {
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
@@ -97,7 +104,7 @@ header ul#dropdown-menu.close {
     gap: 2rem;
     z-index: 2;
     justify-content: center;
-  }
+  } */
 
   header ul#dropdown-menu.close {
     display: none;
@@ -107,6 +114,10 @@ header ul#dropdown-menu.close {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
   }
 
   #menu-toggle.active + #menu {

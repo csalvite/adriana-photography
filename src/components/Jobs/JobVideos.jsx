@@ -7,9 +7,9 @@ const JobVideos = ({ idVideo, urlVideo, images, title, onClick }) => {
   return (
     <div className='option' onClick={() => onClick(idVideo, urlVideo, title)}>
       {images &&
-        images?.map((img) => {
+        images?.map((img, index) => {
           return (
-            <Reveal delay={0.25 + img.id / 10}>
+            <Reveal delay={0.25 + index / 10}>
               <img
                 key={img.id}
                 src={`${REACT_APP_BACK}/video-images/${img.photo}`}
