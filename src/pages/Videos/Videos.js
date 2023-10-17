@@ -1,19 +1,15 @@
-import { useContext, useEffect, useState } from 'react';
-import Footer from '../../components/Footer/Footer';
+import { useState } from 'react';
 import { Header } from '../../components/Header/Header';
-import Jobs from '../../components/Jobs/Jobs';
 import './Videos.css';
-import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import ReactPlayer from 'react-player';
 import Reveal from '../../components/Reveal';
 import JobVideos from '../../components/Jobs/JobVideos';
-import { PhotosContext } from '../../context/PhotosContext';
 import useVideos from '../../hooks/useVideos';
 
 const Videos = () => {
   // Pagina para mostar una lista de todos los videos
   // const { images, error } = useContext(PhotosContext);
-  const { videos, error, loading } = useVideos();
+  const { videos, error } = useVideos();
   const [selectedVideo, setSelectedVideo] = useState({
     src: 'https://www.youtube.com/embed/5GJWxDKyk3A?si=gQmoi1M1ICACYxGz',
     id: 999999,
