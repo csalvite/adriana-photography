@@ -1,10 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Reveal from '../Reveal';
 
 const { REACT_APP_BACK } = process.env;
 
 const PhotosContainer = ({ idImagen, title, image, onClick }) => {
   const [photosCover, setPhotosCover] = useState();
+
+  useEffect(() => {
+    const photos = [];
+    for (let i = 0; i < image.length; i++) {
+      photos.push(image[i]);
+      if (i === 2) break;
+    }
+
+    setPhotosCover(photos);
+  }, [image]);
 
   return (
     <div className='container'>

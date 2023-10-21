@@ -93,10 +93,14 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  transition: all 0.3s ease;
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
+  transition: opacity 0.3s;
+}
+
+.container-options .option div {
+  opacity: 1;
 }
 
 .container-options .option img {
@@ -114,9 +118,13 @@
 }
 
 .container-options .option:hover {
-  background-color: var(--blanco);
+  /* background-color: var(--blanco); */
   color: var(--negro2);
   border: 1px solid black;
+}
+
+.container-options .option:hover div {
+  opacity: 0;
 }
 
 .container-options .option:hover img {

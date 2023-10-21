@@ -6,6 +6,7 @@ import './Photos.css';
 import JobPhotos from '../../components/Jobs/JobPhotos';
 import Reveal from '../../components/Reveal';
 import { PhotosContext } from '../../context/PhotosContext';
+import PhotosContainer from '../../components/PhotosContainer/PhotosContainer';
 
 const Photos = () => {
   //   const { type } = useParams();
@@ -72,13 +73,23 @@ const Photos = () => {
           {error ? (
             <p>{error}</p>
           ) : (
-            <div className='container-options'>
+            <>
               {images?.length > 0 ? (
                 images?.map((image, index) => {
                   return (
-                    <Reveal className={'container-options'}>
-                      <JobPhotos
+                    <Reveal key={index} className={'container-options'}>
+                      {/* <JobPhotos
                         key={index}
+                        idImage={index}
+                        title={{
+                          title: image.title,
+                          subtitle: 'Dir Taylor Swift',
+                          p: 'Sony Venice, Panavision SPHERO',
+                        }}
+                        image={image.images}
+                        onClick={handleSetImagesOnScreen}
+                      /> */}
+                      <PhotosContainer
                         idImage={index}
                         title={{
                           title: image.title,
@@ -94,7 +105,7 @@ const Photos = () => {
               ) : (
                 <div>No hay imágenes todavía...</div>
               )}
-            </div>
+            </>
           )}
         </main>
       )}
