@@ -39,7 +39,7 @@ const Videos = () => {
               controls={true}
               playing={true}
               width='100%'
-              height='600px'
+              height='100%'
             />
           </div>
         )}

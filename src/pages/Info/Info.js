@@ -42,7 +42,7 @@ function Info() {
               mezclar elementos visuales y sonoros para crear una experiencia
               cautivadora.
             </p>
-            <p>
+            {/* <p>
               Lo que distingue mi trabajo es mi dedicación a la autenticidad y
               la conexión emocional. Siempre busco capturar la esencia de mis
               sujetos y transmitir su historia de una manera poderosa y genuina.
@@ -59,7 +59,7 @@ function Info() {
               video son mi forma de dar vida a las historias, y espero que mi
               trabajo te inspire y te invite a explorar el mundo a través de mis
               ojos.
-            </p>
+            </p> */}
             <p>
               Gracias por visitar mi portfolio, y espero que disfrutes de lo que
               ves tanto como yo disfruté creándolo.

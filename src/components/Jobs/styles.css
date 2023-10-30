@@ -112,6 +112,7 @@
 
 .container-options .option h2 {
   display: none;
+  opacity: 0;
   font-weight: 100;
   font-size: 1.8rem;
   text-transform: uppercase;
@@ -133,6 +134,8 @@
 
 .container-options .option:hover h2 {
   display: block;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
 @media (max-width: 600px) {
@@ -148,7 +151,7 @@
   }
 
   .container-options .option {
-    width: 100%;
+    width: 90vw;
     overflow: hidden;
   }
 
