@@ -124,8 +124,9 @@
   border: 1px solid black;
 }
 
-.container-options .option:hover div {
+.container-options .option:hover > div {
   opacity: 0;
+  display: none;
 }
 
 .container-options .option:hover img {
