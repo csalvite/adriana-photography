@@ -27,6 +27,14 @@
   min-height: 480px;
 }
 
+.login-container .message {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-container p {
   font-size: 14px;
   line-height: 20px;
@@ -72,6 +80,10 @@
   flex-direction: column;
   padding: 0 40px;
   height: 100%;
+}
+
+.login-container form h1 {
+  margin-bottom: 1rem;
 }
 
 .login-container input {

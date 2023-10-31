@@ -6,6 +6,7 @@ import './Photos.css';
 import JobPhotos from '../../components/Jobs/JobPhotos';
 import Reveal from '../../components/Reveal';
 import { PhotosContext } from '../../context/PhotosContext';
+import Loading from '../../components/Loading';
 
 const Photos = () => {
   const { images, error, loading } = useContext(PhotosContext);
@@ -32,9 +33,7 @@ const Photos = () => {
         <hr />
       </div>
       {loading ? (
-        <div className='loading'>
-          <img src='/resources/tail-spin.svg' alt='loading' />
-        </div>
+        <Loading />
       ) : (
         <main>
           {imagesOnScreen?.id !== 0 && (
