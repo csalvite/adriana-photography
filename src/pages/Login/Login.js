@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './Login.css';
 import Loading from '../../components/Loading';
+import { TokenContext } from '../..';
+import { Navigate } from 'react-router-dom';
 
 const { REACT_APP_BACK } = process.env;
 
@@ -10,6 +12,8 @@ const Login = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState();
+  // recuperamos del contexto: token y setToken
+  const [token, setToken] = useContext(TokenContext);
 
   const registerBtnOnClick = () => {
     setActive('active');
@@ -53,6 +57,43 @@ const Login = () => {
     }
   };
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const user = {
+      username: e.target.elements.username.value,
+      password: e.target.elements.password.value,
+    };
+
+    try {
+      setLoading(true);
+
+      const response = await fetch(`${REACT_APP_BACK}/acceso`, {
+        method: 'POST',
+        body: JSON.stringify(user),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        const userLogin = await response.json();
+        setToken(userLogin.token);
+        setError(false);
+      } else {
+        const err = await response.json();
+        setError(true);
+        setMessage(err.message);
+      }
+      setLoading(false);
+    } catch (error) {
+      setError(true);
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     setTimeout(() => {
       setMessage();
@@ -61,19 +102,17 @@ const Login = () => {
     }, [5000]);
   }, [message, error, loading]);
 
+  // Si existe el token significa que se ha logeado, por lo que redirigimos a la página principal
+  if (token) {
+    return <Navigate to='/' />;
+  }
+
   return (
     <div className='body-login'>
-      {message && (
-        <div className={`login-container`} id='container'>
-          <div className='message'>
-            <p>{message}</p>
-          </div>
-        </div>
-      )}
       {error && (
         <div className={`login-container`} id='container'>
           <div className='message'>
-            <p>Hay un error</p>
+            <p>{message}</p>
           </div>
         </div>
       )}
@@ -90,10 +129,10 @@ const Login = () => {
           </div>
 
           <div className={`form-container sign-in`}>
-            <form>
+            <form onSubmit={handleLogin}>
               <h1>Inicia Sesión</h1>
-              <input type='text' placeholder='Username' />
-              <input type='password' placeholder='Password' />
+              <input type='text' name='username' placeholder='Username' />
+              <input type='password' name='password' placeholder='Password' />
               <a href='#'>Forget Your Password?</a>
               <button>Sign In</button>
             </form>

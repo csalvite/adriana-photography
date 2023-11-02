@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MyRoutes from './pages/Routes';
 import { PhotosProvider } from './context/PhotosContext';
+import { TokenProvider } from './context/TokenContext';
+
+export const TokenContext = createContext();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PhotosProvider>
-      <MyRoutes />
-    </PhotosProvider>
+    <TokenProvider>
+      <PhotosProvider>
+        <MyRoutes />
+      </PhotosProvider>
+    </TokenProvider>
   </React.StrictMode>
 );
 

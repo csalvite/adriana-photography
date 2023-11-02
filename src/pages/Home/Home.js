@@ -3,6 +3,7 @@ import { Header } from '../../components/Header/Header';
 import Job from '../../components/Jobs/Job';
 import './Home.css';
 import { PhotosContext } from '../../context/PhotosContext';
+import { Logout } from '../../components/Logout';
 
 function Home() {
   const { images, error, loading } = useContext(PhotosContext);
@@ -13,6 +14,7 @@ function Home() {
       <main>
         <Job isHeader={true} />
       </main>
+      <Logout />
     </div>
   );
 }
