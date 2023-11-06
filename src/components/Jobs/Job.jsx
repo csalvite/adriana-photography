@@ -4,16 +4,11 @@ import './styles.css';
 const Job = () => {
   return (
     <div className='job-container job-container-big'>
-      <Link to='/videos'>
+      <Link to='/photos'>
         <div className='image-hover'>
-          <h3>Happier Than Ever</h3>
+          <h3>Kaméleon Vintage</h3>
         </div>
-        <div
-          className='image-container-background'
-          style={{
-            backgroundImage: 'url(http://source.unsplash.com/random)',
-          }}
-        ></div>
+        <div className='image-container-background'></div>
       </Link>
     </div>
   );
