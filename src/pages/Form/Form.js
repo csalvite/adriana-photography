@@ -2,17 +2,14 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { TokenContext } from '../..';
 import Select from 'react-select';
 import './Form.css';
-import { useKey } from '../../components/PhotoCarrousel/WSPGallery';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading';
-import { to } from '@react-spring/web';
 const { REACT_APP_BACK } = process.env;
 
 const Form = () => {
   const [active, setActive] = useState('');
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState();
   const [cargarCat, setCargarCat] = useState(false);
   // recuperamos del contexto: token y setToken
   const [token, setToken] = useContext(TokenContext);
@@ -20,7 +17,6 @@ const Form = () => {
   const filesInputRef1 = useRef();
   const filesInputRef2 = useRef();
   const [success, setSuccess] = useState(false);
-  const [nameCollection, setNameCollection] = useState();
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
   const [urlVideo, setUrlVideo] = useState();
@@ -209,7 +205,7 @@ const Form = () => {
           </div>
         )}
         {loading && <Loading />}
-        {token && !(error || message || loading || success) && (
+        {token && !(error || loading || success) && (
           <>
             <h1>Formulario de Subida de contenido</h1>
             <div className={`login-container ${active}`} id='container'>

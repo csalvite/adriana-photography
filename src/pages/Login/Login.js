@@ -15,10 +15,6 @@ const Login = () => {
   // recuperamos del contexto: token y setToken
   const [token, setToken] = useContext(TokenContext);
 
-  const registerBtnOnClick = () => {
-    setActive('active');
-  };
-
   const loginBtnOnClick = () => {
     setActive('');
   };
