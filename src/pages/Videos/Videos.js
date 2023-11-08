@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import './Videos.css';
 import ReactPlayer from 'react-player';
@@ -10,28 +10,35 @@ const Videos = () => {
   // Pagina para mostar una lista de todos los videos
   // const { images, error } = useContext(PhotosContext);
   const { videos, error } = useVideos();
-  const [selectedVideo, setSelectedVideo] = useState({
-    src: 'https://www.youtube.com/embed/5GJWxDKyk3A?si=gQmoi1M1ICACYxGz',
-    id: 999999,
-    title: 'Happier Than Ever',
-  });
+  const [selectedVideo, setSelectedVideo] = useState();
 
-  const handleSelectVideo = (idVideo, srcVideo, title) => {
-    console.log('onclick', idVideo, srcVideo, title);
+  const handleSelectVideo = (idVideo, srcVideo, title, description) => {
+    console.log('onclick', idVideo, srcVideo, title, description);
     setSelectedVideo({
       id: idVideo,
       src: srcVideo,
       title: title,
+      description: description,
     });
 
     window.scrollTo(0, 0);
   };
 
+  useEffect(() => {
+    console.log(videos[0]);
+    setSelectedVideo({
+      id: videos[0]?.id,
+      src: videos[0]?.urlVideo,
+      title: videos[0]?.title,
+      description: videos[0]?.description,
+    });
+  }, [videos]);
+
   return (
     <div className='App videos-container'>
       <Header />
       <main>
-        {selectedVideo?.id !== 0 && (
+        {selectedVideo && (
           // <VideoPlayer title={selectedVideo.title} src={selectedVideo?.src} />
           <div className='container-video'>
             <ReactPlayer
@@ -41,6 +48,8 @@ const Videos = () => {
               width='100%'
               height='100%'
             />
+            <h2>{selectedVideo.title}</h2>
+            <p>{selectedVideo.description}</p>
           </div>
         )}
         <div className='container'>
@@ -52,12 +61,13 @@ const Videos = () => {
                 <div>
                   {videos.map((video) => {
                     return (
-                      <Reveal className={'container-options'}>
+                      <Reveal key={video.id} className={'container-options'}>
                         <JobVideos
                           key={video.id}
                           idVideo={video.id}
                           urlVideo={video.urlVideo}
                           title={video.title}
+                          description={video.description}
                           images={video.photos}
                           onClick={handleSelectVideo}
                         />

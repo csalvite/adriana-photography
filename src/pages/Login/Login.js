@@ -99,12 +99,12 @@ const Login = () => {
       setMessage();
       setError();
       setLoading(false);
-    }, [5000]);
+    }, [2500]);
   }, [message, error, loading]);
 
   // Si existe el token significa que se ha logeado, por lo que redirigimos a la página principal
   if (token) {
-    return <Navigate to='/' />;
+    return <Navigate to='/add' />;
   }
 
   return (
@@ -133,8 +133,8 @@ const Login = () => {
               <h1>Inicia Sesión</h1>
               <input type='text' name='username' placeholder='Username' />
               <input type='password' name='password' placeholder='Password' />
-              <a href='#'>Forget Your Password?</a>
-              <button>Sign In</button>
+              {/* <a href='#'>Forget Your Password?</a> */}
+              <button>Entrar</button>
             </form>
           </div>
 
@@ -151,19 +151,25 @@ const Login = () => {
                   Sign In
                 </button>
               </div>
-              <div className='toggle-panel toggle-right'>
-                <h1>Hello, Friend!</h1>
-                <p>
-                  Register with your personal details to use all of site
-                  features
-                </p>
-                <button
-                  className='hidden'
-                  id='register'
-                  onClick={() => registerBtnOnClick()}
-                >
-                  Sign Up
-                </button>
+              <div className='toggle-panel toggle-grid toggle-right'>
+                <img
+                  src='/resources/images/fondoInicioSesion.png'
+                  alt='inicioSesion'
+                />
+                <div>
+                  <h1>Holi!</h1>
+                  <p>
+                    Inicia Sesión co teu usuario e contraseña para poder subir
+                    contenido novo ao teu portfolio :)
+                  </p>
+                  {/* <button
+                    className='hidden'
+                    id='register'
+                    onClick={() => registerBtnOnClick()}
+                  >
+                    Sign Up
+                  </button> */}
+                </div>
               </div>
             </div>
           </div>

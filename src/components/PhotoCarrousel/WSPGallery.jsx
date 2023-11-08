@@ -4,7 +4,7 @@ import Reveal from '../Reveal';
 
 const { REACT_APP_BACK } = process.env;
 
-const useKey = (key, callback) => {
+export const useKey = (key, callback) => {
   const callbackRef = useRef(callback);
 
   useEffect(() => {
@@ -91,7 +91,7 @@ const WSPGallery = ({ images, sectionTitle }) => {
         {images &&
           images.map((image, index) => {
             return (
-              <Reveal delay={0.25 + index / 10}>
+              <Reveal key={index} delay={0.25 + index / 10}>
                 <div
                   className='single'
                   key={index}

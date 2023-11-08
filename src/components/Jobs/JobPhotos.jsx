@@ -22,7 +22,7 @@ const JobPhotos = ({ idImagen, title, image, onClick }) => {
       {photosCover &&
         photosCover?.map((img, index) => {
           return (
-            <Reveal delay={0.25 + index / 10}>
+            <Reveal key={img.id} delay={0.25 + index / 10}>
               <img
                 key={index}
                 src={`${REACT_APP_BACK}/${title.title}/${img.name}`}

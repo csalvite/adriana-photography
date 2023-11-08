@@ -23,10 +23,12 @@ export const PhotosProvider = ({ children }) => {
         const data = await response.json();
 
         if (response.ok) {
-          const dataArray = Object.keys(data.data).map((title) => {
+          const dataArray = data.data.map((collections) => {
             return {
-              title,
-              images: data.data[title],
+              title: collections.collection,
+              titleCol: collections.title,
+              description: collections.description,
+              images: collections.photos,
             };
           });
           setLoading(false);

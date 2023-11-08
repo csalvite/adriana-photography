@@ -16,11 +16,19 @@ const Photos = () => {
     images: [],
   });
 
-  const handleSetImagesOnScreen = (imagesId, images, title) => {
+  const handleSetImagesOnScreen = (
+    imagesId,
+    images,
+    title,
+    collection,
+    description
+  ) => {
     setImagesOnScreen({
       id: imagesId,
-      images: images,
-      title: title,
+      images,
+      title,
+      collection,
+      description,
     });
 
     window.scrollTo(0, 0);
@@ -56,8 +64,8 @@ const Photos = () => {
                         idImage={index}
                         title={{
                           title: image.title,
-                          subtitle: 'Dir Taylor Swift',
-                          p: 'Sony Venice, Panavision SPHERO',
+                          subtitle: image.titleCol,
+                          p: image.description,
                         }}
                         image={image.images}
                         onClick={handleSetImagesOnScreen}
