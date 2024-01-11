@@ -2,11 +2,13 @@ import { useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import MenuResponsive from './MenuResponsive';
+import useVideos from '../../hooks/useVideos';
 
 export const Header = () => {
   // document.getElementById('menu-toggle').addEventListener('click', function () {
   //   this.classList.toggle('active'); // Agrega o remueve la clase "active" al botón
   // });
+  const { videos } = useVideos();
 
   const [open, setOpen] = useState('close');
 
@@ -45,9 +47,11 @@ export const Header = () => {
         <li>
           <Link to='/photos'>Fotografía</Link>
         </li>
-        <li>
-          <Link to='/videos'>Videos</Link>
-        </li>
+        {videos.length > 0 && (
+          <li>
+            <Link to='/videos'>Videos</Link>
+          </li>
+        )}
         <li>
           <Link to='/info'>Sobre Mí</Link>
         </li>

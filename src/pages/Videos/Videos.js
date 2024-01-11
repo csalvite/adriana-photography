@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player';
 import Reveal from '../../components/Reveal';
 import JobVideos from '../../components/Jobs/JobVideos';
 import useVideos from '../../hooks/useVideos';
+import NotFound from '../../components/NotFound';
 
 const Videos = () => {
   // Pagina para mostar una lista de todos los videos
@@ -38,6 +39,12 @@ const Videos = () => {
     <div className='App videos-container'>
       <Header />
       <main>
+        {videos.length < 1 && (
+          <NotFound
+            text={'No hay videos todavía...'}
+            error={'Es un not found'}
+          />
+        )}
         {selectedVideo && (
           // <VideoPlayer title={selectedVideo.title} src={selectedVideo?.src} />
           <div className='container-video'>
@@ -57,7 +64,7 @@ const Videos = () => {
             <p>{error}</p>
           ) : (
             <div className='container-options'>
-              {videos?.length > 0 ? (
+              {videos?.length > 0 && (
                 <div>
                   {videos.map((video) => {
                     return (
@@ -75,8 +82,6 @@ const Videos = () => {
                     );
                   })}
                 </div>
-              ) : (
-                <div> No hay videos todavía...</div>
               )}
               {/* {images?.length > 0 ? (
                 images?.map((image, index) => {

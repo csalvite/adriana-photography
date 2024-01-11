@@ -1,0 +1,61 @@
+/* RectanguloImagenes.css */
+.rectangulo-imagenes {
+  position: relative;
+  width: 800px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* .rectangulo-imagenes.hovered {
+  background-color: rgba(0, 0, 0, 0.7);
+} */
+
+.imagenes-container {
+  display: flex;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.imagenes-container img {
+  width: 33%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.titulo {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .rectangulo-imagenes {
+    margin: 1.2rem 0;
+    width: 380px;
+    height: 150px;
+  }
+
+  .rectangulo-imagenes .option {
+    width: 90vw;
+    overflow: hidden;
+  }
+
+  .rectangulo-imagenes .option h2 {
+    font-size: 1.2rem;
+  }
+}

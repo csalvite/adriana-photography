@@ -106,9 +106,11 @@ const WSPGallery = ({ images, sectionTitle }) => {
             );
           })}
       </div>
-      <h2>{sectionTitle?.title}</h2>
-      <h3>{sectionTitle?.subtitle}</h3>
-      <p>{sectionTitle?.p}</p>
+      <div className='galleryTitles'>
+        <h2>{sectionTitle?.title}</h2>
+        <h3>{sectionTitle?.subtitle}</h3>
+        <p>{sectionTitle?.p}</p>
+      </div>
     </div>
   );
 };

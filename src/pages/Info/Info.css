@@ -32,7 +32,8 @@
   flex: 1; /* Los párrafos ocuparán el 50% restante del ancho disponible */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  margin-top: 3.5rem;
   gap: 1rem;
   max-width: 50%;
   text-align: justify;
@@ -56,7 +57,7 @@
 
   .about-me .text-container {
     max-width: 100%;
-    padding: 0 1rem;
+    margin-top: initial;
   }
 
   .about-me img {
