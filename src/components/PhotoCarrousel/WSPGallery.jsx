@@ -107,9 +107,8 @@ const WSPGallery = ({ images, sectionTitle }) => {
           })}
       </div>
       <div className='galleryTitles'>
-        <h2>{sectionTitle?.title}</h2>
-        <h3>{sectionTitle?.subtitle}</h3>
-        <p>{sectionTitle?.p}</p>
+        <h2>{sectionTitle?.subtitle}</h2>
+        {sectionTitle?.p !== undefined && <p>{sectionTitle?.p}</p>}
       </div>
     </div>
   );

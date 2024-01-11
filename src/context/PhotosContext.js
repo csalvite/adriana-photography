@@ -27,7 +27,10 @@ export const PhotosProvider = ({ children }) => {
             return {
               title: collections.collection,
               titleCol: collections.title,
-              description: collections.description,
+              description:
+                collections.description !== 'undefined'
+                  ? collections.description
+                  : '',
               images: collections.photos,
             };
           });
