@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import { Keyboard, Pagination, Navigation } from 'swiper/modules';
 const { REACT_APP_BACK } = process.env;
 
-export const SwiperKeyControl = ({ images }) => {
+export const SwiperKeyControl = ({ images, sectionTitle = 'stills' }) => {
   return (
     <>
       <Swiper
@@ -29,14 +29,14 @@ export const SwiperKeyControl = ({ images }) => {
         className='swiper-stills'
         // loop={true}
       >
-        {images.map((image) => {
+        {images.map((image, index) => {
           return (
-            <SwiperSlide className='swiper-slide'>
+            <SwiperSlide key={index} className='swiper-slide'>
               <img
-                key={image.id}
+                key={index}
                 className='swiper-item'
-                src={`${REACT_APP_BACK}/stills/${image.name}`}
-                alt={`Stills ${image.id}`}
+                src={`${REACT_APP_BACK}/${sectionTitle.title}/${image.name}`}
+                alt={`Stills ${index}`}
               />
             </SwiperSlide>
           );

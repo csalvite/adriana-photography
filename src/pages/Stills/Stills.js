@@ -55,8 +55,6 @@ const Stills = () => {
     setFullScreenStills(!fullScreenStills);
   };
 
-  console.log('stills', stills);
-
   const innerRender = () => {
     if (loading) {
       return <Loading />;

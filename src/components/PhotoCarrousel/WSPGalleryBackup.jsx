@@ -23,7 +23,7 @@ export const useKey = (key, callback) => {
   }, [key]);
 };
 
-const WSPGallery = ({ images, sectionTitle, onClick }) => {
+const WSPGallery = ({ images, sectionTitle }) => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [openModal, setOpenModal] = useState(false);
 
@@ -67,6 +67,26 @@ const WSPGallery = ({ images, sectionTitle, onClick }) => {
 
   return (
     <div className='wspGallery'>
+      {openModal && (
+        <div className='sliderWrap'>
+          <i
+            className='fa-solid fa-xmark btnClose'
+            onClick={handleCloseModal}
+          ></i>
+          <i className='fa-solid fa-arrow-left btnPrev' onClick={prevSlide}></i>
+          <i
+            className='fa-solid fa-arrow-right btnNext'
+            onClick={nextSlide}
+          ></i>
+          <div className='fullScreenImage'>
+            <img
+              src={`${REACT_APP_BACK}/${sectionTitle.title}/${images[slideNumber].name}`}
+              alt=''
+            />
+          </div>
+        </div>
+      )}
+
       <div className='galleryWrap'>
         {images &&
           images.map((image, index) => {
@@ -75,8 +95,7 @@ const WSPGallery = ({ images, sectionTitle, onClick }) => {
                 <div
                   className='single'
                   key={index}
-                  // onClick={() => handleOpenModal(index)}
-                  onClick={onClick}
+                  onClick={() => handleOpenModal(index)}
                 >
                   <img
                     src={`${REACT_APP_BACK}/${sectionTitle.title}/${image.name}`}
