@@ -1,13 +1,10 @@
 // import { useParams } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import '../Photos/Photos.css';
 import './Stills.css';
 // import JobPhotos from '../../components/Jobs/JobPhotos';
-import Reveal from '../../components/Reveal';
-import { PhotosContext } from '../../context/PhotosContext';
 import Loading from '../../components/Loading';
-import RectanguloImagenes from '../../components/imagenes/RectanguloImagenes';
 import { SwiperKeyControl } from '../../components/Stills/SwiperKeyControl';
 const { REACT_APP_BACK } = process.env;
 

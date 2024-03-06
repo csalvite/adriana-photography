@@ -15,7 +15,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(/public/resources/images/_MG_3704\ copia.jpeg);
+  /* background-image: url(/public/resources/images/_MG_3704\ copia.jpg); */
+  background-image: url(/src/assets/_MG_3704\ copia.jpg);
   width: 100%;
   height: 100%;
 }
