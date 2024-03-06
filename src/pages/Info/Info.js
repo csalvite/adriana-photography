@@ -9,7 +9,6 @@ function Info() {
       <Header />
       <main>
         <div className='about-me'>
-          {/* <img src='/resources/profile.jpg' alt='profileimage' /> */}
           <AboutMeCard />
           <div className='text-container'>
             <p>

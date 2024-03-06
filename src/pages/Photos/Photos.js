@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import WSPGallery from '../../components/PhotoCarrousel/WSPGallery';
 import './Photos.css';
-// import JobPhotos from '../../components/Jobs/JobPhotos';
 import Reveal from '../../components/Reveal';
 import Loading from '../../components/Loading';
 import RectanguloImagenes from '../../components/imagenes/RectanguloImagenes';

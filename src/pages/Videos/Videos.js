@@ -8,13 +8,10 @@ import useVideos from '../../hooks/useVideos';
 import NotFound from '../../components/NotFound';
 
 const Videos = () => {
-  // Pagina para mostar una lista de todos los videos
-  // const { images, error } = useContext(PhotosContext);
   const { videos, error } = useVideos();
   const [selectedVideo, setSelectedVideo] = useState();
 
   const handleSelectVideo = (idVideo, srcVideo, title, description) => {
-    console.log('onclick', idVideo, srcVideo, title, description);
     setSelectedVideo({
       id: idVideo,
       src: srcVideo,
@@ -26,7 +23,6 @@ const Videos = () => {
   };
 
   useEffect(() => {
-    console.log(videos[0]);
     setSelectedVideo({
       id: videos[0]?.id,
       src: videos[0]?.urlVideo,
@@ -46,7 +42,6 @@ const Videos = () => {
           />
         )}
         {selectedVideo && (
-          // <VideoPlayer title={selectedVideo.title} src={selectedVideo?.src} />
           <div className='container-video'>
             <ReactPlayer
               url={selectedVideo?.src}
@@ -83,27 +78,6 @@ const Videos = () => {
                   })}
                 </div>
               )}
-              {/* {images?.length > 0 ? (
-                images?.map((image, index) => {
-                  return (
-                    <Reveal className={'container-options'}>
-                      <JobPhotos
-                        key={index}
-                        idImage={index}
-                        title={{
-                          title: image.title,
-                          subtitle: 'Dir Taylor Swift',
-                          p: 'Sony Venice, Panavision SPHERO',
-                        }}
-                        image={image.images}
-                        onClick={handleSelectVideo}
-                      />
-                    </Reveal>
-                  );
-                })
-              ) : (
-                <div>No hay imágenes todavía...</div>
-              )} */}
             </div>
           )}
         </div>

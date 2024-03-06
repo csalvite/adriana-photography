@@ -1,9 +1,7 @@
-// import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import '../Photos/Photos.css';
 import './Stills.css';
-// import JobPhotos from '../../components/Jobs/JobPhotos';
 import Loading from '../../components/Loading';
 import { SwiperKeyControl } from '../../components/Stills/SwiperKeyControl';
 const { REACT_APP_BACK } = process.env;
@@ -97,35 +95,7 @@ const Stills = () => {
   return (
     <div className='App container-photos'>
       <Header />
-      {/*
-        <main>
-          <div className='container'>
 
-                return (
-                  <Reveal key={index} delay={0.25 + index / 10}>
-                    <RectanguloImagenes
-                      imagenes={image.images}
-                      titulo={image.title}
-                      idImage={index}
-                      title={{
-                        title: image.title,
-                        subtitle: image.titleCol,
-                        p: image.description,
-                      }}
-                      image={image.images}
-                      onClick={handleSetImagesOnScreen}
-                    />
-                  </Reveal>
-                );
-              })
-            ) : (
-              <div>No hay imágenes todavía...</div>
-            )}
-          </div>
-
-          <h3>Stillssssssss</h3>
-        </main>
-      )} */}
       {innerRender()}
     </div>
   );

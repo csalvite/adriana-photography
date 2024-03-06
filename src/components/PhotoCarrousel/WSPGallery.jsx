@@ -1,70 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
 import './PhotosCarrousel.css';
 import Reveal from '../Reveal';
 
 const { REACT_APP_BACK } = process.env;
 
-export const useKey = (key, callback) => {
-  const callbackRef = useRef(callback);
-
-  useEffect(() => {
-    callbackRef.current = callback;
-  });
-
-  useEffect(() => {
-    function handle(e) {
-      if (e.code === key) {
-        callbackRef.current(e);
-      }
-    }
-
-    document.addEventListener('keydown', handle);
-    return () => document.removeEventListener('keypress', handle);
-  }, [key]);
-};
-
 const WSPGallery = ({ images, sectionTitle, onClick }) => {
-  const [slideNumber, setSlideNumber] = useState(0);
-  const [openModal, setOpenModal] = useState(false);
-
-  function handleKeySlideImageNext() {
-    if (openModal) {
-      nextSlide();
-    }
-  }
-
-  function handleKeySlideImagePrev() {
-    if (openModal) {
-      prevSlide();
-    }
-  }
-
-  const handleOpenModal = (index) => {
-    setSlideNumber(index);
-    setOpenModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
-  };
-
-  const prevSlide = () => {
-    slideNumber === 0
-      ? setSlideNumber(images.length - 1)
-      : setSlideNumber(slideNumber - 1);
-  };
-
-  const nextSlide = () => {
-    slideNumber + 1 === images.length
-      ? setSlideNumber(0)
-      : setSlideNumber(slideNumber + 1);
-  };
-
-  // Keys refs
-  useKey('ArrowRight', handleKeySlideImageNext);
-  useKey('ArrowLeft', handleKeySlideImagePrev);
-  useKey('Escape', handleCloseModal);
-
   return (
     <div className='wspGallery'>
       <div className='galleryWrap'>

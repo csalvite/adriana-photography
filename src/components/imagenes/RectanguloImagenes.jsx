@@ -1,7 +1,5 @@
-// RectanguloImagenes.js
 import React, { useEffect, useState } from 'react';
 import './RectanguloImagenes.css';
-import Reveal from '../Reveal';
 
 const { REACT_APP_BACK } = process.env;
 
