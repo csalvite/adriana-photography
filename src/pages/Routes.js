@@ -5,6 +5,7 @@ import Photos from './Photos/Photos';
 import Videos from './Videos/Videos';
 import Login from './Login/Login';
 import Form from './Form/Form';
+import Stills from './Stills/Stills';
 
 function MyRoutes() {
   return (
@@ -15,6 +16,7 @@ function MyRoutes() {
         <Route path='/info' element={<Info />} />
         <Route path='/photos' element={<Photos />} />
         <Route path='/videos' element={<Videos />} />
+        <Route path='/stills' element={<Stills />} />
         {/* Pagina para login */}
         <Route path='/acceso' element={<Login />} />
         <Route path='/add' element={<Form />} />

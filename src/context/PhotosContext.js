@@ -8,6 +8,7 @@ export const PhotosProvider = ({ children }) => {
   const [images, setImages] = useState([]);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
   // Función para cargar las fotos iniciales utilizando useEffect
   useEffect(() => {
@@ -34,8 +35,10 @@ export const PhotosProvider = ({ children }) => {
               images: collections.photos,
             };
           });
+
           setLoading(false);
           setImages(dataArray);
+          setAllImagesLoaded(true); // Indica que todas las imágenes están cargadas
         } else {
           setError(data.message);
           setLoading(false);
@@ -48,9 +51,23 @@ export const PhotosProvider = ({ children }) => {
     getPhotos();
   }, []);
 
+  const handleImageLoad = () => {
+    // Esta función se llamará cuando cada imagen termine de cargar
+    // Puedes realizar acciones adicionales aquí si es necesario
+  };
+
   return (
     <PhotosContext.Provider
-      value={{ images, setImages, error, setError, loading, setLoading }}
+      value={{
+        images,
+        setImages,
+        error,
+        setError,
+        loading,
+        setLoading,
+        allImagesLoaded,
+        handleImageLoad,
+      }}
     >
       {children}
     </PhotosContext.Provider>

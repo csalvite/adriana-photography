@@ -10,7 +10,7 @@ import Loading from '../../components/Loading';
 import RectanguloImagenes from '../../components/imagenes/RectanguloImagenes';
 
 const Photos = () => {
-  const { images, error, loading } = useContext(PhotosContext);
+  const { allImagesLoaded: images, error, loading } = useContext(PhotosContext);
   const [imagesOnScreen, setImagesOnScreen] = useState({
     idImages: 0,
     images: [],

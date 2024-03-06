@@ -27,6 +27,11 @@ const MenuResponsive = ({ className }) => {
       )}
       <Reveal width='100%' delay={0.45}>
         <li>
+          <Link to='/stills'>Stills</Link>
+        </li>
+      </Reveal>
+      <Reveal width='100%' delay={0.45}>
+        <li>
           <Link to='/info'>Sobre Mí</Link>
         </li>
       </Reveal>

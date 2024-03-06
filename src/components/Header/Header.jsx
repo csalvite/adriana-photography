@@ -53,6 +53,9 @@ export const Header = () => {
           </li>
         )}
         <li>
+          <Link to='/stills'>Stills</Link>
+        </li>
+        <li>
           <Link to='/info'>Sobre Mí</Link>
         </li>
       </ul>
