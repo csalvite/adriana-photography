@@ -68,7 +68,7 @@ const Stills = () => {
                 className='fa-solid fa-xmark close'
                 onClick={handleSetFullScreenStills}
               ></i>
-              <SwiperKeyControl images={stills} sectionTitle='stills' />
+              <SwiperKeyControl images={stills} />
             </div>
           ) : stills.length > 0 ? (
             stills.map((still, index) => {

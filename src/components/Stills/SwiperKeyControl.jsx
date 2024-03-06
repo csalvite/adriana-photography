@@ -12,7 +12,10 @@ import 'swiper/css/navigation';
 import { Keyboard, Pagination, Navigation } from 'swiper/modules';
 const { REACT_APP_BACK } = process.env;
 
-export const SwiperKeyControl = ({ images, sectionTitle = 'stills' }) => {
+export const SwiperKeyControl = ({
+  images,
+  sectionTitle = { title: 'stills' },
+}) => {
   return (
     <>
       <Swiper
